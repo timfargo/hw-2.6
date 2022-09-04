@@ -10,7 +10,7 @@ public class Main {
         doTask4();
     }
     private static void doTask1(){
-        List<Integer> nums = generate(20);
+        List<Integer> nums = generate(7);
         for (Integer num : nums){
             if (num % 2 == 1){
                 System.out.println(num);
@@ -18,7 +18,7 @@ public class Main {
         }
     }
     private static void doTask2(){
-        List<Integer> nums = generate(20);
+        List<Integer> nums = generate(7);
         Set<Integer> result = new TreeSet<>(nums);
         for (Integer num : result){
             if (num % 2 == 0){
@@ -42,12 +42,16 @@ public class Main {
             }
 
             }
+        for (Map.Entry<String,Integer> entry : result.entrySet()){
+            if (entry.getValue() > 1){
+                System.out.println(entry.getKey() + "->" + entry.getValue());
+            }
+        }
     }
     private static List<Integer> generate(int n){
         List<Integer> list = new ArrayList<>(n);
-        for (int i = 0; i < n; i++){
-            list.add(RANDOM.nextInt(0,5));
-        }
+        for (int i = 0; i < n; i++);
+            list.add(RANDOM.nextInt(7));
         System.out.println("Сгенерированные числа: " + list);
         return list;
     }
